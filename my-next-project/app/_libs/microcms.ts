@@ -64,3 +64,15 @@ export const getNewsList = async (queries?: MicroCMSQueries) => {
 // export type Category = {
 //     name: string;
 // }
+
+export const getNewsDetail = async (
+    contentId: string,
+    queries?: MicroCMSQueries
+) => {
+    const detailData = await client.getListDetail<News>({
+        endpoint: "news",
+        contentId,
+        queries,
+    });
+    return detailData;
+};
